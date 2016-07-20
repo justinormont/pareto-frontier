@@ -1,7 +1,8 @@
 Pareto Frontier
 ===
-[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][codecov-image]][codecov-url] [![Dependencies][dependencies-image]][dependencies-url]
-
+[![NPM version][npm-image]][npm-url]
+[![Build Status][travis-image]][travis-url]
+[![Coverage Status][codecov-image]][codecov-url] [![Dependencies][dependencies-image]][dependencies-url]
 
 The [Pareto Frontier](https://en.wikipedia.org/wiki/Pareto_efficiency), or Pareto set, is the set of choices which optimizes a system. This package calculates the optimal set of points in a 2D system.
 
@@ -118,7 +119,7 @@ $ npm view-cov
 Copyright &copy; 2016. The [pareto-frontier](https://github.com/justinormont/pareto-frontier) Authors.
 
 
-[npm-image]: http://img.shields.io/npm/v/pareto-frontier
+[npm-image]: https://img.shields.io/npm/v/pareto-frontier.svg
 [npm-url]: https://npmjs.org/package/pareto-frontier
 
 [travis-image]: http://img.shields.io/travis/justinormont/pareto-frontier/master.svg
