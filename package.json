@@ -1,0 +1,45 @@
+{
+  "name": "pareto-frontier",
+  "version": "1.0.0",
+  "description": "The Pareto frontier, or Pareto set, is the set of choices which optimizes a system. This package calculates the optimal set of points in a 2D system.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "test-cov": "./node_modules/istanbul/lib/cli.js  cover ./node_modules/.bin/_mocha --dir ./reports/coverage -- -R spec",
+    "codecov": "./node_modules/istanbul/lib/cli.js cover ./node_modules/.bin/_mocha --dir ./reports/codecov/coverage --report lcovonly -- -R spec && cat ./reports/codecov/coverage/lcov.info | ./node_modules/codecov/bin/codecov && rm -rf ./reports/codecov"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justinormont/pareto-frontier.git"
+  },
+  "keywords": [
+    "pareto optimal",
+    "Pareto optimality",
+    "Pareto set",
+    "Pareto front",
+    "skyline",
+    "skyline query",
+    "Nash equilibrium",
+    "maximum vector problem",
+    "economics",
+    "statistics"
+  ],
+  "author": "Justin Ormont (https://linkedin.com/in/justinormont)",
+  "contributors": [
+    {
+      "name": "Justin Ormont"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/justinormont/pareto-frontier/issues"
+  },
+  "homepage": "https://github.com/justinormont/pareto-frontier#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "istanbul": "^0.4.4",
+    "jshint": "^2.9.2",
+    "jshint-stylish": "^2.2.0",
+    "mocha": "^2.5.3"
+  }
+}
