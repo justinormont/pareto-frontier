@@ -14,31 +14,31 @@ const assert = chai.assert;
 /* Tests */
 describe('pareto-frontier', function tests(){
 
-	it('should export a function', function test(){
-		expect(paretoFrontier.getParetoFrontier).to.be.a('function');
-	});
+    it('should export a function', function test(){
+        expect(paretoFrontier.getParetoFrontier).to.be.a('function');
+    });
 
-	it('should throw an error if provided an invalid option', function test(){
-		const badValues = [
-			'5',
-			5,
-			true,
-			undefined,
+    it('should throw an error if provided an invalid option', function test(){
+        const badValues = [
+            '5',
+            5,
+            true,
+            undefined,
             () => true,
-			null,
-			NaN,
-			{},
+            null,
+            NaN,
+            {},
             [[1]],
             [[1, 2, 3]],
             [[1, 2], [1]],
-		];
+        ];
 
-		badValues.forEach(v => expect(() => paretoFrontier.getParetoFrontier(v)).to.throw(TypeError));
-	});
+        badValues.forEach(v => expect(() => paretoFrontier.getParetoFrontier(v)).to.throw(TypeError));
+    });
 
-	it('should return an empty array if provided an empty array', function test() {
+    it('should return an empty array if provided an empty array', function test() {
         expect(paretoFrontier.getParetoFrontier([])).to.deep.equal([]);
-	});
+    });
 
     it('should calculate the pareto frontier', function test() {
         const data = [
@@ -68,6 +68,6 @@ describe('pareto-frontier', function tests(){
         ];
 
         expect(paretoFrontier.getParetoFrontier(data)).to.deep.equal(expected);
-	});
+    });
 
 });
