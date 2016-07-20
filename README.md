@@ -98,13 +98,13 @@ All new feature development should have corresponding unit tests to validate cor
 This repository uses [Istanbul](https://github.com/gotwarlost/istanbul) as its code coverage tool. To generate a test coverage report, execute the following command in the top-level application directory:
 
 ``` bash
-$ npm test-cov
+$ npm run test-cov
 ```
 
 Istanbul creates a `./reports/coverage` directory. To access an HTML version of the report,
 
 ``` bash
-$ npm view-cov
+$ npm run view-cov
 ```
 
 
