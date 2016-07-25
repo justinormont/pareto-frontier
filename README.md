@@ -36,36 +36,59 @@ Evaluates the [Pareto Frontier](https://en.wikipedia.org/wiki/Pareto_efficiency)
 
 ``` javascript
 const graph = [
-    [43, 16],
-    [97, 16],
-    [23, 29],
-    [52, 32],
-    [52, 74],
-    [46, 66],
-    [39, 16],
-    [86, 3],
-    [22, 30],
-    [92, 77],
-    [35, 67],
-    [4, 59],
-    [85, 14],
-    [49, 7],
-    [37, 73],
+    [55, 42],
+    [60, 22],
+    [83, 20],
+    [20, 81],
+    [41, 35],
+    [12, 32],
+    [29, 17],
+    [64, 55],
+    [47, 31],
+    [89, 10],
+    [68, 66],
+    [33, 35],
+    [72, 47],
+    [33, 90],
+    [49, 25],
 ];
 
 const out = pf.getParetoFrontier(graph);
 
 /* returns:
     [
-        [4, 59],  
-        [35, 67],
-        [37, 73],
-        [52, 74],
-        [92,77]
+        [89, 10],
+        [83, 20],
+        [72, 47],
+        [68, 66],
+        [33, 90]
     ]
 */
 ```
+##### Direction of Pareto Frontier
+Optional `options` object may be pass to `getParetoFrontier(graph, options)` to specify which direction to optimize.
 
+| Top Left Pareto Frontier |
+| ------ |
+| <center><img src="images/top-left.png?raw=true" width="342" alt="Top Left Pareto Frontier"></center> |
+| ```pf.getParetoFrontier(graph, { optimize: 'topLeft' });``` |
+
+| Top Right Pareto Frontier |
+| ------ |
+| <center><img src="images/top-right.png?raw=true" width="342" alt="Top Left Pareto Frontier"></center> |
+| ```pf.getParetoFrontier(graph, { optimize: 'topRight'} );``` |
+
+| Bottom Right Pareto Frontier |
+| ------ |
+| <center><img src="images/bottom-right.png?raw=true" width="342" alt="Bottom Right Pareto Frontier"></center> |
+| ```pf.getParetoFrontier(graph, { optimize: 'bottomRight'} );``` |
+
+| Bottom Left Pareto Frontier |
+| ------ |
+| <center><img src="images/bottom-left.png?raw=true" width="342" alt="Bottom Right Pareto Frontier"></center> |
+| ```pf.getParetoFrontier(graph, { optimize: 'bottomLeft'} );``` |
+
+##### Bad inputs
 For non-wellformed inputs, a `TypeError` will be thrown.
 
 ``` javascript
@@ -102,10 +125,6 @@ $ npm run test-cov
 ```
 
 Istanbul creates a `./reports/coverage` directory. To access an HTML version of the report,
-
-``` bash
-$ npm run view-cov
-```
 
 
 ---
