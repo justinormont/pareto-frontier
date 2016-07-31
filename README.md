@@ -30,9 +30,13 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 const pf = require('pareto-frontier');
 ```
 
-#### pf.getParetoFrontier(x)
+#### pf.getParetoFrontier(graph)
 
-Evaluates the [Pareto Frontier](https://en.wikipedia.org/wiki/Pareto_efficiency). `x` must be an [`array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) of length two arrays.
+Evaluates the [Pareto Frontier](https://en.wikipedia.org/wiki/Pareto_efficiency). `graph` must be an [`array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) of points. Each point must be an array of length two (or more). Additional information can be stored in each point and will pass through. Eg: `[55, 42, 'red']`.
+
+Returned points are the Pareto Optimal set sorted to form a line.
+
+
 
 ``` javascript
 const graph = [
@@ -56,15 +60,16 @@ const graph = [
 const out = pf.getParetoFrontier(graph);
 
 /* returns:
-    [
-        [89, 10],
-        [83, 20],
-        [72, 47],
-        [68, 66],
-        [33, 90]
-    ]
+[
+    [89, 10],
+    [83, 20],
+    [72, 47],
+    [68, 66],
+    [33, 90]
+]
 */
 ```
+
 ##### Direction of Pareto Frontier
 Optional `options` object may be pass to `getParetoFrontier(graph, options)` to specify which direction to optimize.
 
@@ -94,7 +99,7 @@ For non-wellformed inputs, a `TypeError` will be thrown.
 ``` javascript
 const graph = [
 	[0,-4],
-	[1],
+	[1],  // Missing second dimension
 	[2,0],
 ];
 
@@ -136,6 +141,8 @@ Istanbul creates a `./reports/coverage` directory. To access an HTML version of 
 ## Copyright
 
 Copyright &copy; 2016. The [pareto-frontier](https://github.com/justinormont/pareto-frontier) Authors.
+
+Description text partially via [Wikipedia](https://en.wikipedia.org/wiki/Pareto_efficiency).
 
 
 [npm-image]: https://img.shields.io/npm/v/pareto-frontier.svg
